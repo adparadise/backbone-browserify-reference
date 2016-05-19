@@ -1,14 +1,14 @@
 
 
 var Backbone = require('backbone');
-_ = require('underscore');
+var _ = require('underscore');
 Backbone.$ = require('jquery');
 Backbone.LocalStorage = require('backbone.localstorage');
 
-AppView = require('./views/app-view');
+var AppView = require('./views/app-view');
 
 function build () {
-    appView = new AppView({
+    var appView = new AppView({
         el: '#todo-list'
     });
     appView.render();
