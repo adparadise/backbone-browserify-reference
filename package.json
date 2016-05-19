@@ -1,0 +1,25 @@
+{
+  "name": "backbone-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "mkdir -p dist; browserify -r ./src/app.js:app -t babelify -d src/app.js -o dist/app.bundle.js",
+    "watch": "mkdir -p dist; watchify   -r ./src/app.js:app -t babelify -d src/app.js -o dist/app.bundle.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "backbone": "^1.3.3",
+    "backbone-localstorage": "^0.3.2",
+    "backbone.localstorage": "^1.1.16",
+    "lodash": "^4.12.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
+    "watchify": "^3.7.0"
+  }
+}

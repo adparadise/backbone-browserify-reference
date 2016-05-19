@@ -1,0 +1,56 @@
+<!doctype HTML>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <!--
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone-min.js"></script>
+    <script>
+      $(function () {
+          var AppView = Backbone.View.extend({
+              initialize: function() {},
+
+              render: function() {
+                  this.el.innerHTML = "HERE";
+                  return this;
+              },
+          });
+
+          appView = new AppView({
+              el: '#todo-list'
+          });
+          appView.render();
+          console.log(appView);
+      });
+    </script>
+    -->
+    <script src="dist/app.bundle.js"></script>
+    <script>
+      window.onload = function () {
+         var app = require('app');
+         app.build();
+      };
+    </script>
+    <div id="todo-list">
+      "here"
+    </div>
+    <script type="text/template" id="item-template">
+      <div class="view">
+        <input class="toggle" type="checkbox" <%= done ? 'checked="checked"' : '' %> />
+        <label><%- title %></label>
+        <a class="destroy"></a>
+      </div>
+      <input class="edit" type="text" value="<%- title %>" />
+    </script>
+
+    <script type="text/template" id="stats-template">
+      <% if (done) { %>
+      <a id="clear-completed">Clear <%= done %> completed <%= done == 1 ? 'item' : 'items' %></a>
+      <% } %>
+      <div class="todo-count"><b><%= remaining %></b> <%= remaining == 1 ? 'item' : 'items' %> left</div>
+    </script>
+  </body>
+</html>
