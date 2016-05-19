@@ -1,0 +1,1 @@
+This project is a reference of building a Backbone application using Browserify and Babel.
